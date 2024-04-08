@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from '../layouts/Title';
 import Card from './Card';
+import { featuresData } from '../../data/data';
 
 const Features = () => {
   return (
@@ -8,12 +9,9 @@ const Features = () => {
       <Title title={'Features'} des={'What I do'} />
 
       <div className={'grid grid-cols-3 gap-20'}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {featuresData.map(({ id, icon, title, des }) => (
+          <Card id={id} icon={icon} title={title} des={des} />
+        ))}
       </div>
     </section>
   );
