@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import { RiStarFill } from 'react-icons/ri';
 import { HiArrowRight, HiArrowLeft } from 'react-icons/hi';
@@ -6,12 +6,58 @@ import Title from '../layouts/Title';
 import { testimonialOne, testimonialTwo, quote } from '../../assets/index';
 
 const Testimonial = () => {
+  const [dotActive, setDocActive] = useState(0);
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    beforeChange: (prev,next) =>{
+      setDocActive(next)
+    },
+    appendDots: dots => (
+      <div
+        style={{
+          borderRadius: '10px',
+          padding: '10px',
+        }}
+      >
+        <ul
+          style={{
+            display: 'flex',
+            gap: '15px',
+            justifyContent: 'center',
+            marginTop: '20px',
+          }}
+        >
+          {dots}
+        </ul>
+      </div>
+    ),
+    customPaging: i => (
+      <div
+        style={
+          i === dotActive
+            ? {
+                width: '12px',
+                height: '12px',
+                color: 'blue',
+                background: '#ff014f',
+                borderRadius: '50%',
+                cursor: 'pointer',
+              }
+            : {
+                width: '12px',
+                height: '12px',
+                color: 'blue',
+                background: 'gray',
+                borderRadius: '50%',
+                cursor: 'pointer',
+              }
+        }
+      ></div>
+    ),
   };
 
   return (
