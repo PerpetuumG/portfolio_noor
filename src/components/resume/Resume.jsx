@@ -1,6 +1,8 @@
 import React from 'react';
 import Title from '../layouts/Title';
 import Education from "./Education";
+import Skills from "./Skills";
+import Experience from "./Experience";
 
 const Resume = () => {
   return (
@@ -18,7 +20,9 @@ const Resume = () => {
         </ul>
       </div>
 
-      <Education/>
+      {/*<Education/>*/}
+      {/*<Skills/>*/}
+      <Experience/>
     </section>
   );
 };
