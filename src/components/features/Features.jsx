@@ -8,7 +8,7 @@ const Features = () => {
     <section id={'features'} className={'w-full py-20 border-b-[1px] border-b-black'}>
       <Title title={'Features'} des={'What I do'} />
 
-      <div className={'grid grid-cols-3 gap-20'}>
+      <div className={'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-20'}>
         {featuresData.map(({ id, icon, title, des }) => (
           <Card id={id} icon={icon} title={title} des={des} />
         ))}
